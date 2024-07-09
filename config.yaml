@@ -17,6 +17,6 @@ siteStream:
     - c_footer
   localization:
     locales:
-      - en
+      - ja
     primary: false
   entityId: "3343460927327957922"

@@ -9,6 +9,8 @@ import {
   GetHeadConfig,
   GetPath,
   HeadConfig,
+  StaticTemplateConfig,
+  TemplateConfig,
   TemplateProps,
   TemplateRenderProps,
 } from "@yext/pages";
@@ -37,7 +39,12 @@ const chatConfig: ChatHeadlessConfig = {
   botId: import.meta.env.YEXT_PUBLIC_CHAT_BOTID,
   saveToSessionStorage: false,
 };
-
+export const config: StaticTemplateConfig = {
+  // The name of the feature. If not set the name of this file will be used (without extension).
+  // Use this when you need to override the feature name.
+  name: "Tepco Gen AI",
+  locales: ["ja"]
+};
 export const getPath: GetPath<TemplateProps> = () => {
   return `index.html`;
 };
@@ -127,6 +134,7 @@ function Inner() {
 }
 
 const GenerativeAI = ({ document }: TemplateProps) => {
+
   const { _site } = document;
   const { c_header, c_footer } = _site;
 

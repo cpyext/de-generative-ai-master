@@ -156,3 +156,6 @@ const GenerativeAI = ({ document }: TemplateProps) => {
 };
 
 export default GenerativeAI;
+
+
+/*test*/ 

@@ -38,6 +38,7 @@ const chatConfig: ChatHeadlessConfig = {
   apiKey: import.meta.env.YEXT_PUBLIC_CHAT_APIKEY,
   botId: import.meta.env.YEXT_PUBLIC_CHAT_BOTID,
   saveToSessionStorage: false,
+  env: "SANDBOX"
 };
 export const config: StaticTemplateConfig = {
   // The name of the feature. If not set the name of this file will be used (without extension).
@@ -60,11 +61,11 @@ export const getHeadConfig: GetHeadConfig<
 };
 
 const searcher = provideHeadless(searchConfig);
-const universalLimits = {
-  help_articles: 8,
-  products: 8,
-  locations: 8,
-};
+// const universalLimits = {
+//   help_articles: 8,
+//   products: 8,
+//   locations: 8,
+// };
 function Inner() {
   const searchActions = useSearchActions();
   const chatActions = useChatActions();
@@ -75,7 +76,7 @@ function Inner() {
   const handleSearch: onSearchFunc = (searchEventData) => {
     setHasSearched(true);
     const { query } = searchEventData;
-    searchActions.setUniversalLimit(universalLimits);
+    // searchActions.setUniversalLimit(universalLimits);
     searchActions.executeUniversalQuery();
     chatActions.restartConversation();
     chatActions.getNextMessage(query);

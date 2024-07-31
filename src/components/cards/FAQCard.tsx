@@ -35,3 +35,4 @@ const FAQCard = ({ result }: CardProps<any>): JSX.Element => {
 };
 
 export default FAQCard;
+/* test */
